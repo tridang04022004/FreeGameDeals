@@ -159,6 +159,7 @@ export function GameCard({ deal, store }: GameCardProps) {
                 width={16}
                 height={16}
                 className="object-contain"
+                loading="eager"
               />
             )}
             {store && (

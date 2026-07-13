@@ -63,6 +63,7 @@ export function StoreFilter({ stores, selected, onChange }: StoreFilterProps) {
               width={14}
               height={14}
               className="object-contain"
+              loading="eager"
             />
             <span className="hidden sm:inline">{store.storeName}</span>
           </button>
