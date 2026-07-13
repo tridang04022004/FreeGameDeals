@@ -153,13 +153,12 @@ export function GameCard({ deal, store }: GameCardProps) {
           {/* Store logo */}
           <div className="flex items-center gap-1.5">
             {storeIconUrl && (
-              <Image
+              <img
                 src={storeIconUrl}
                 alt={store!.storeName}
                 width={16}
                 height={16}
                 className="object-contain"
-                unoptimized
               />
             )}
             {store && (

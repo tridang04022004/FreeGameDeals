@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { buildStoreIconUrl } from '@/lib/utils';
 import type { Store } from '@/lib/types';
 
@@ -58,13 +57,12 @@ export function StoreFilter({ stores, selected, onChange }: StoreFilterProps) {
               }
             `}
           >
-            <Image
+            <img
               src={buildStoreIconUrl(store.images.icon)}
               alt={store.storeName}
               width={14}
               height={14}
               className="object-contain"
-              unoptimized
             />
             <span className="hidden sm:inline">{store.storeName}</span>
           </button>
