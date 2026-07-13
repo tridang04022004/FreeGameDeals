@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* ============================================================
+   FREEGAMEDEALS — Neobrutalism Design System
+   Palette: Electric Blue + Hot Pink on near-black
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* ── Accent palette ── */
+    --blue-400: #60a5fa;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
+    --blue-700: #1d4ed8;
+    --pink-400: #f472b6;
+    --pink-500: #ec4899;
+    --pink-600: #db2777;
+
+    /* ── Neobrutalism core ── */
+    --border-color: #000000;
+    --shadow-color: #000000;
+    --shadow-offset: 4px;
+    --border-width: 2px;
+
+    /* ── Light mode tokens ── */
+    --bg-primary: #f0f4ff;
+    --bg-surface: #ffffff;
+    --bg-surface-2: #e8eeff;
+    --text-primary: #0d0d14;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+  }
+
+  .dark {
+    /* ── Dark mode tokens ── */
+    --bg-primary: #0d0d14;
+    --bg-surface: #13131f;
+    --bg-surface-2: #1a1a2e;
+    --text-primary: #f0f4ff;
+    --text-secondary: #cbd5e1;
+    --text-muted: #64748b;
+    --border-color: #000000;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    min-height: 100vh;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* ============================================================
+   NEOBRUTALISM UTILITIES
+   ============================================================ */
+
+@layer utilities {
+  /* Hard shadow (neobrutalism signature) */
+  .nb-shadow {
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+  }
+
+  .nb-shadow-pink {
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #ec4899;
+  }
+
+  .nb-shadow-blue {
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #1d4ed8;
+  }
+
+  .nb-shadow-lg {
+    box-shadow: 6px 6px 0px var(--shadow-color);
+  }
+
+  /* Hover lift */
+  .nb-hover {
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+
+  .nb-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--shadow-color);
+  }
+
+  .nb-hover-pink:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #ec4899;
+  }
+
+  /* Hard border */
+  .nb-border {
+    border: var(--border-width) solid var(--border-color);
+  }
+
+  .nb-border-blue {
+    border: 2px solid #3b82f6;
+  }
+
+  /* Gradient text (logo) */
+  .gradient-text {
+    background: linear-gradient(135deg, #3b82f6 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* FREE badge pulse */
+  @keyframes free-pulse {
+    0%, 100% { box-shadow: 4px 4px 0px #be185d; }
+    50%       { box-shadow: 6px 6px 0px #be185d; transform: translate(-1px, -1px); }
+  }
+
+  .free-badge {
+    animation: free-pulse 2s ease-in-out infinite;
+  }
+
+  /* Card thumbnail overlay on hover */
+  .card-thumb-wrap {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-thumb-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(236,72,153,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  .card-thumb-wrap:hover::after {
+    opacity: 1;
+  }
+
+  /* Shimmer loading skeleton */
+  @keyframes shimmer {
+    0%   { background-position: -600px 0; }
+    100% { background-position: 600px 0; }
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, var(--bg-surface-2) 25%, var(--bg-surface) 50%, var(--bg-surface-2) 75%);
+    background-size: 600px 100%;
+    animation: shimmer 1.4s infinite;
+  }
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border: 2px solid var(--bg-primary);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: #ec4899; }
