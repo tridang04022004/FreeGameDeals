@@ -1,6 +1,14 @@
 # FreeGameDeals
 
-Track free PC game promotional giveaways across major stores.
+I'm broke and I don't want to miss any chance to snatch a free deal for a game even though I know I will never play them.
+
+## The Only Feature
+
+- Tracks free PC game promotional giveaways across major stores.
+
+## Data Attribution
+
+All game deals provided by [CheapShark](https://www.cheapshark.com).
 
 ## Tech Stack
 
@@ -9,17 +17,6 @@ Track free PC game promotional giveaways across major stores.
 - **Data Source**: [CheapShark API](https://apidocs.cheapshark.com/)
 - **Deployment**: [Vercel](https://vercel.com/)
 
-## Features
-
-- Real-time tracking of 100% off deals across Steam, Epic Games, GOG, Humble Bundle, and more
-- Neobrutalist design with light/dark theme support
-- ISR (Incremental Static Regeneration) with 24-hour revalidation
-- Client-side sorting and infinite scroll pagination
-
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## Data Attribution
-
-All game deals provided by [CheapShark](https://www.cheapshark.com).
+MIT License
