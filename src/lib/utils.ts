@@ -17,10 +17,15 @@ export function buildSteamUrl(steamAppID: string): string {
 }
 
 /**
- * Build the full store icon URL from CheapShark's relative path.
+ * Build the URL for a store icon, routed through our own proxy.
+ *
+ * WHY: CheapShark is behind Cloudflare which blocks cross-origin browser
+ * requests (Referer from a different domain) with HTTP 429. Serving the icon
+ * through /api/store-icon means the browser sends a same-origin request, and
+ * our server fetches from CheapShark without a Referer — which always succeeds.
  */
 export function buildStoreIconUrl(iconPath: string): string {
-  return `${CHEAPSHARK_BASE}${iconPath}`;
+  return `/api/store-icon?path=${encodeURIComponent(iconPath)}`;
 }
 
 /**
