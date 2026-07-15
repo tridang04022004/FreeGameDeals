@@ -36,7 +36,7 @@ export function GameCard({ deal, store }: GameCardProps) {
     <article className="nb-border nb-shadow nb-hover flex flex-col bg-[var(--bg-surface)] overflow-hidden group">
       {/* Thumbnail */}
       <div className="card-thumb-wrap relative w-full aspect-video bg-[var(--bg-surface-2)]" style={{ position: 'relative' }}>
-        <a href={storeLink.url} target="_blank" rel="noopener noreferrer" aria-label={storeLink.label}>
+        <a href={storeLink.url} target="_blank" rel="noopener noreferrer" aria-label={storeLink.label} className="absolute inset-0">
           <Image
             src={deal.thumb}
             alt={deal.title}
