@@ -29,14 +29,19 @@ export default async function HomePage() {
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-none tracking-tight text-[var(--text-primary)]">
-                Free Games, <span className="gradient-text">Right Now.</span>
+                Free Game Deals,{" "}
+                <span className="gradient-text">Just That.</span>
               </h1>
               <p className="mt-3 text-base text-[var(--text-secondary)] max-w-xl">
-                Every paid PC game currently being given away for free across{" "}
+                I know this sounds sketchy, but I'm just a broke b*tch who wants
+                to collect games even though I never play most of them, so I
+                make this site that tracks every paid PC games that are
+                currently being given away for free across{" "}
                 <span className="font-bold text-[#3b82f6]">
                   {stores.length} stores
                 </span>
-                , refreshed every 24 hours.
+                , deals are refreshed every 24 hours. You get the game directly
+                from the stores, I don't provide any downloads.
               </p>
             </div>
 
